@@ -97,10 +97,6 @@ void settings() {
  * Load all assets in the demo
  */
 void setup() {
-  int fps = 60;
-  // Assembly has 60Hz maximum projector framerate, ref. https://www.assembly.org/summer19/demoscene/rules
-  frameRate(fps);
-
   // Loads 3D mesh. OBJ format can be created with, for example, Blender 3D program: https://www.blender.org/
   gear = loadShape("gear.obj");
   asmLogo = loadShape("assylogo.obj");
@@ -127,6 +123,11 @@ void setup() {
   int rowsPerBeat = 4; // How many rows one beat consists of in the sync editor (GNURocket or so)
   moonlander = Moonlander.initWithSoundtrack(this, "20190608_graffathon_onescene.mp3", bpm, rowsPerBeat);
   moonlander.start();
+
+  // frameRate() triggers drawing stuff, so do it at the end to avoid getting stuck
+  int fps = 60;
+  // Assembly has 60Hz maximum projector framerate, ref. https://www.assembly.org/summer19/demoscene/rules
+  frameRate(fps);
 }
 
 
