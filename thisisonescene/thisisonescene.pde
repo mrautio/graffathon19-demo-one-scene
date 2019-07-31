@@ -78,10 +78,19 @@ String[] texts = {
  * Initialize the window
  */
 void settings() {
-  size((int)CANVAS_WIDTH,(int)CANVAS_HEIGHT, P3D);
-
-  //Set the window fullscreen
-  fullScreen();
+  boolean fullscreen = true;
+  
+  if (fullscreen) {
+    //Set the window fullscreen in desktop's native resolution
+    fullScreen(P3D);
+  } else {
+    //open as window
+    size((int)CANVAS_WIDTH,(int)CANVAS_HEIGHT, P3D);
+    
+    //or if you want a smaller window then put some 16:9 aspect ratio resolution
+    //like 800x450... do not edit CANVAS_WIDTH/CANVAS_HEIGHT
+    //size((int)800,(int)450, P3D);
+  }
 }
 
 /*
