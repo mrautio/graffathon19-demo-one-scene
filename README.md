@@ -49,6 +49,7 @@ Interested making your own demos but you're missing assets or don't know what to
 ### Tools to create or edit images
 * https://www.gimp.org/
 * https://inkscape.org/
+* https://krita.org/
 
 ### Free 3D
 * https://www.blendswap.com/
